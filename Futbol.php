@@ -5,10 +5,10 @@ include_once "Partido.php";
 class Futbol extends Partido{
     private $categoria;
 
-    public function __construct($idpartido, $fecha,$objEquipo1,$cantGolesE1,$objEquipo2,$cantGolesE2,$categoria)
+    public function __construct($idpartido, $fecha,$objEquipo1,$cantGolesE1,$objEquipo2,$cantGolesE2)
     {
         parent::__construct($idpartido, $fecha,$objEquipo1,$cantGolesE1,$objEquipo2,$cantGolesE2,);
-        $this->categoria = $categoria;
+        $this->categoria = $objEquipo1->getCategoria();
     }
 
     public function getCategoria(){

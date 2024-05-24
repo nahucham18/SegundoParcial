@@ -65,22 +65,24 @@ class Torneo
     {
         $validacion = false;
         $partidos = $this->getPartidos();
+        $partido = null;
         if ($tipoPartido == "Futbol") {
             $validacion = $this->validarPartida($ObjEquipo1, $ObjEquipo2);
             if ($validacion) {
-                $partidoFultbol = new Futbol(uniqid(), $fecha, $ObjEquipo1, $ObjEquipo2, readline('Goles equipo 1:'), readline('Goles equipo 2:'), readline('Ingrese Categoria:'));
-                array_push($partidos, $partidoFultbol);
+                $partido = new Futbol(uniqid(), $fecha, $ObjEquipo1, $ObjEquipo2, readline('Goles equipo 1:'), readline('Goles equipo 2:'), readline('Ingrese Categoria:'));
+                
+                array_push($partidos, $partido);
             }
         }
         if ($tipoPartido == "Basket") {
             $validacion = $this->validarPartida($ObjEquipo1, $ObjEquipo2);
             if ($validacion) {
-                $partidoBasket = new Futbol(uniqid(), $fecha, $ObjEquipo1, $ObjEquipo2, readline('Goles equipo 1:'), readline('Goles equipo 2:'), readline('Ingrese Infracicones:'));
-                array_push($partidos, $partidoBasket);
+                $partido = new Basket(uniqid(), $fecha, $ObjEquipo1, $ObjEquipo2, readline('Goles equipo 1:'), readline('Goles equipo 2:'), readline('Ingrese Infracicones:'));
+                array_push($partidos, $partido);
             }
         }
 
-        return $validacion;
+        return $partido;
     }
 
     public function darGanadores($deporte)
@@ -111,5 +113,11 @@ class Torneo
             'equipoGanador' => $equipoGanador,
             'premioPartido' => $premioPartido
         );
+    }
+
+    public function __toString()
+    {
+        $cadena = "TORNEO\n";
+        return $cadena;
     }
 }

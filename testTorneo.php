@@ -39,14 +39,15 @@ $partidoBasket1 = new Basket(11,"2024-05-05",$objE7, 80,$objE8,120,7);
 $partidoBasket2 = new Basket(12,"2024-05-06",$objE9, 81,$objE10,110,8);
 $partidoBasket3 = new Basket(13,"2024-05-07",$objE11, 115,$objE12,85,9);
 
-$partidoFutbol1 = new Futbol(14,"2024-05-07",$objE1, 3,$objE2,2,7);
-$partidoFutbol2 = new Futbol(15,"15",$objE3, 0,$objE4,1,8);
-$partidoFutbol3 = new Futbol(16,"2024-05-09",$objE5, 2,$objE6,3,9);
+$partidoFutbol1 = new Futbol(14,"2024-05-07",$objE1, 3,$objE2,2);
+$partidoFutbol2 = new Futbol(15,"15",$objE3, 0,$objE4,1);
+$partidoFutbol3 = new Futbol(16,"2024-05-09",$objE5, 2,$objE6,3);
 
 
-$nuevoTorneo->ingresarPartido($objE5, $objE11, '2024-05-23', 'Futbol');
-$nuevoTorneo->ingresarPartido($objE11, $objE11, '2024-05-23', 'basquetbol');
-$nuevoTorneo->ingresarPartido($objE9, $objE10, '2024-05-25', 'basquetbol');
+$partido1 = $nuevoTorneo->ingresarPartido($objE5, $objE11, '2024-05-23', 'Futbol');
+$partido2 = $nuevoTorneo->ingresarPartido($objE11, $objE11, '2024-05-23', 'basquetbol');
+$partido3 = $nuevoTorneo->ingresarPartido($objE9, $objE10, '2024-05-25', 'basquetbol');
+
 
 $nuevoTorneo->darGanadores('Basket');
 $nuevoTorneo->darGanadores('Futbol');
